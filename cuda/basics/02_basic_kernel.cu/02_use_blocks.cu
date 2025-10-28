@@ -116,19 +116,6 @@ int main() {
     printf("Vector summation time: %.6f ms\n", sumTime);
     printf("Total computation time: %.6f ms\n", genTime + sumTime);
 
-    // Optional: Print first and last few results for verification
-    printf("\n=== Sample Results (first 5 and last 5) ===\n");
-    int displayCount = arraySize < 5 ? arraySize : 5;
-    for (int i = 0; i < displayCount; i++) {
-        printf("c[%d] = %d\n", i, c[i]);
-    }
-    if (arraySize > 10) {
-        printf("...\n");
-        for (int i = arraySize - displayCount; i < arraySize; i++) {
-            printf("c[%d] = %d\n", i, c[i]);
-        }
-    }
-
     // Clean up
     cudaEventDestroy(start_gen);
     cudaEventDestroy(stop_gen);
